@@ -112,7 +112,7 @@ async function sendEmail(name, email, phoneNumber) {
         connection.query(loginSql, [email, password], (err, rows) => {
             if (err) {
                 console.error('Error during login:', err);
-                return res.status(500).json({ error: 'Internal server error' });
+                return res.status(500).json({ error: 'Internal server error1' });
             }
             if (rows.length === 0) {
                 return res.status(401).json({ error: 'Invalid email or password' });
