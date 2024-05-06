@@ -105,7 +105,7 @@ async function sendEmail(name, email, phoneNumber) {
         if (!email || !password) {
             return res.status(400).json({ error: 'Please provide email and password' });
         }
-        console.log("before sqling");
+        return res.send("before sql");
         const loginSql = `
             SELECT * FROM Student WHERE Email = ? AND Password = ?
         `;
