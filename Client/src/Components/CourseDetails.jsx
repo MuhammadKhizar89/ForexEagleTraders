@@ -5,11 +5,11 @@ import React from 'react';
 export default function CourseDetails() {
   return (
     <div className="bg-gradient-to-b from-black to-gray-800 text-white mx-auto h-auto shadow-lg  overflow-hidden">
-      <div className=" m-10 flex flex-col px-6 py-4 container mt-[80px]">
+      <div className=" m-5 flex flex-col px-6 py-4 container mt-[80px]">
         <h2 className="text-4xl font-bold mb-2 border-b-4 border-gray-500">Forex Mastery: Unlocking Market Potential</h2>
         <p className="text-xl mt-20">This course is designed to provide you with a comprehensive understanding of the forex market and equip you with the skills necessary to navigate it effectively.</p>
       </div>
-      <div className="m-10  px-6 pt-4 pb-2 space-y-2">
+      <div className="m-5  px-6 pt-4 pb-2 space-y-2">
         <h3 className="text-2xl font-bold mb-2">Course Overview:</h3>
         <ul className="list-disc list-inside text-base">
           <li><strong>Understanding Forex Markets:</strong> Grasp the basics of currency trading and market dynamics.</li>

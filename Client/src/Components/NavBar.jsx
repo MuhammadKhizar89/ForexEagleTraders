@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link, useNavigate } from 'react-router-dom';
 import { scroller } from 'react-scroll';
+import logo from "../assets/logo.png";
 
 const NavItem = ({ link, onClick }) => (
   <li className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 duration-200">
@@ -48,8 +49,9 @@ const NavBar = () => {
 
   return (
     <div className="flex justify-between relative items-center w-full h-20 px-4 text-white bg-black fixed">
-      <div>
-        <h1 className="text-xl md:text-3xl font-bold ml-2" ><a href="/">Forex Eagle Academy</a></h1>
+      <div className='flex'>
+      <img src={logo} alt="my profile" className='w-[80px] h-[80px]'/>
+        <h1 className="text-xl md:text-3xl font-bold  mt-5" ><a href="/">Forex Eagle Academy</a></h1>
       </div>
       <ul className={`hidden md:flex items-center ${nav ? 'hidden' : ''}`}>
         <NavItem link="Home" onClick={() => handleScrollToSection('home')} />

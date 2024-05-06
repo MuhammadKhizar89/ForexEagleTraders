@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // 
-
+import { FaLinkedin } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
 export default function Contact() {
+  const authToken = localStorage.getItem('auth-token');
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -171,6 +175,27 @@ export default function Contact() {
           </form>
         </div>
       </div>
+
+<div className='md:hidden'>
+  <hr />
+<footer className="bg-black text-white py-4">
+  <div className="container mx-auto flex justify-center items-center">
+    <a href="https://www.linkedin.com/in/arslan-basharat-785a62307/" target="_blank" rel="noopener noreferrer" className="mr-4">
+      LinkedIn <FaLinkedin className="ml-1" size={30} />
+    </a>
+    {authToken &&  <a href="/banner" className="mr-4">
+      Whatsapp <FaWhatsapp className="ml-1" size={30} />
+  </a>}
+    <a href="mailto:forexeaglestraders@gmail.com" className="mr-4">
+      Mail <HiOutlineMail className="ml-1" size={30} />
+    </a>
+  </div>
+</footer>
+</div>
+
+
+
+
     </>
   );
   
