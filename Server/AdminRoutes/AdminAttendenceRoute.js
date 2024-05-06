@@ -23,17 +23,6 @@ function verifyToken(req, res, next) {
 
 router.post('/attendanceGenerator', verifyToken, function (req, res) {
     var currentDate = new Date();
-    currentDate.setHours(0, 0, 0, 0);
-    const currentHour = currentDate.getHours();
-    console.log(currentHour);
-    if (currentHour >= 22||(currentHour >=0&&currentHour<=2)) {
-        // If the current hour is 22 (10 PM) or later, it's close to midnight,
-        // so we add 2 days instead of 1 to ensure we get the next day's date
-        currentDate.setDate(currentDate.getDate() + 2);
-    } else {
-        // Otherwise, we add 1 day to get the next day's date
-        currentDate.setDate(currentDate.getDate() + 1);
-    }
     const formattedDate = currentDate.toISOString().slice(0, 10); // Format date as 'YYYY-MM-DD'
      currentDate = formattedDate;
     const excludedStudentID = 13; // ID of the student to exclude
@@ -134,7 +123,7 @@ router.put('/markAttendance', verifyToken, function (req, res) {
         const attendanceDate = new Date(date);
 
         // Subtract one day from the date
-        attendanceDate.setDate(attendanceDate.getDate() + 1);
+        attendanceDate.setDate(attendanceDate.getDate());
 
         // Update the date string in the attendance object
         date = attendanceDate.toISOString().slice(0, 10); // Format as YYYY-MM-DD
