@@ -54,7 +54,7 @@ export default function Admin() {
       const newStatus = currentStatus === 'P' ? 'A' : 'P';
       const token = localStorage.getItem('auth-token');
       try {
-          const response = await fetch('http://localhost:3000/Admin/markAttendance', {
+          const response = await fetch(`${import.meta.VITE_SERVER_URL}/Admin/markAttendance`, {
               method: 'PUT',
               headers: {
                   'Content-Type': 'application/json',
@@ -94,7 +94,7 @@ export default function Admin() {
   const handleGenerateAttendance = async () => {
     try {
         const token = localStorage.getItem('auth-token');
-        const response = await fetch('http://localhost:3000/Admin/attendanceGenerator', {
+        const response = await fetch(`${import.meta.VITE_SERVER_URL}/Admin/attendanceGenerator`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
