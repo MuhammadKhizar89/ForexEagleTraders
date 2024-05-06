@@ -22,7 +22,7 @@ export default function Work() {
     }
     const fetchAttendanceData = async () => {
       try {
-        const response = await axios.get(`${import.meta.VITE_SERVER_URL}/Student/getUserAttendance`, {
+        const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/Student/getUserAttendance`, {
           headers: {
             'auth-token': token // Include the token in the request headers
           }
@@ -35,7 +35,7 @@ export default function Work() {
 
     const fetchUserInfo = async () => {
       try {
-        const response = await axios.get(`${import.meta.VITE_SERVER_URL}/Student/getUserInfo`, {
+        const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/Student/getUserInfo`, {
           headers: {
             'auth-token': token // Include the token in the request headers
           }

@@ -71,7 +71,7 @@ export default function Contact() {
   if (validateForm()) { // Assuming you have a validation function
     try {
       // Send a POST request to your API endpoint with the form data
-      const response = await axios.post(`${import.meta.VITE_SERVER_URL}/Student/register`, {
+      const response = await axios.post(`${import.meta.env.VITE_SERVER_URL}/Student/register`, {
         name: formData.name,
         email: formData.email,
         phoneNumber: formData.phoneNumber,

@@ -43,7 +43,7 @@ export default function Login() {
     if (validateLogin()) {
       try {
         // Replace with your login API endpoint
-        const response = await axios.post(`${import.meta.VITE_SERVER_URL}/Student/login`, loginData);
+        const response = await axios.post(`${import.meta.env.VITE_SERVER_URL}/Student/login`, loginData);
         console.log('Login successful:', response.data);
         localStorage.setItem('auth-token', response.data.token);
         localStorage.setItem('admin_email', response.data.user.Email);
