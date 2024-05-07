@@ -41,7 +41,7 @@ const NavBar = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('auth-token');
+    localStorage.clear();
     navigate('/');
     window.location.reload();
     setIsLoggedIn(false);
