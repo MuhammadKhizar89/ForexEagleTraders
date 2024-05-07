@@ -82,10 +82,9 @@ export default function Contact() {
       // Handle the response from the API
       console.log('Data stored successfully:', response.data);
       localStorage.setItem('auth-token', response.data.token);
-      navigate('/banner'); // Use navigate to redirect
-      // You can clear the form or redirect the user after successful registration
+      navigate('/banner'); 
     } catch (error) {
-    
+      errors['email'] = 'Email already exist';
       console.error('Error storing data:', error);
     }
   }
