@@ -1,6 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes } from "react-icons/fa";
+const LoadingModal = () => {
+    return (
+      <div className="fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-75">
+        <div className="bg-white p-8 rounded-lg">
+          <div className="flex items-center mb-4">
+            <div className="rounded-full h-4 w-4 bg-gray-400 mr-4"></div>
+            <div className="text-gray-800">Loading...</div>
+          </div>
+          <div className="bg-gray-300 h-2 rounded-full">
+            <div className="bg-blue-500 h-full rounded-full"></div>
+          </div>
+        </div>
+      </div>
+    );
+  };
 export default function Admin() {
     const navigate = useNavigate();
     const [attendanceData, setAttendanceData] = useState([]);
@@ -9,6 +24,8 @@ export default function Admin() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [errorModalVisible, setErrorModalVisible] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
+    const [isLoading, setIsLoading] = useState(true); // State variable to track loading state
+
     useEffect(() => {
         const e = localStorage.getItem('admin_email');
         if (e !== "forexeaglestraders@gmail.com") {
@@ -30,6 +47,7 @@ export default function Admin() {
             });
             const data = await response.json();
             setAttendanceData(data);
+            setIsLoading(false);
         } catch (error) {
             console.error('Error fetching attendance data:', error);
         }
@@ -127,6 +145,9 @@ export default function Admin() {
     
     return (
         <div className="container mx-auto p-4">
+        {isLoading && <LoadingModal />} {/* Render LoadingModal if isLoading is true */}
+        
+        <div className="container mx-auto p-4">
             <div className="flex justify-between items-center mb-4">
                 <h2 className="text-2xl font-semibold text-gray-800">Students Attendance</h2>
                 <div className={`hidden md:flex ${isMenuOpen ? 'hidden' : ''} `}>
@@ -190,6 +211,7 @@ export default function Admin() {
                     </div>
                 </div>
             )}
+        </div>
         </div>
     );
 }
