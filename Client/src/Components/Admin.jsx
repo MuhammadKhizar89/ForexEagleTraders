@@ -14,9 +14,13 @@ export default function Admin() {
         if (e !== "forexeaglestraders@gmail.com") {
             navigate('/');
         } else {
-            fetchAttendanceData();
-            
-            
+            var eventObject = {
+                target: {
+                    value: today.toISOString().substring(0, 10) // Format date as YYYY-MM-DD
+                }
+            };
+            fetchAttendanceData();            
+            handleDateChange(eventObject);
         }
     }, []);
 
