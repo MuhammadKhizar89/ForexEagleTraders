@@ -41,10 +41,7 @@ export default function Contact() {
     if (!formData.phoneNumber) {
       formIsValid = false;
       errors['phoneNumber'] = 'Phone number is required';
-    } else if (!/^\d{10}$/.test(formData.phoneNumber)) {
-      formIsValid = false;
-      errors['phoneNumber'] = 'Phone number is not valid';
-    }
+    } 
 
     // Password validation
     if (!formData.password) {

@@ -60,8 +60,14 @@ export default function Login() {
         } 
         // Redirect to home page or dashboard after successful login
       } catch (error) {
-        console.error('Login error:', error);
-        // Handle login errors (e.g., wrong credentials)
+        if (error.response && error.response.status === 401) {
+          console.error('Invalid credentials');
+          setLoginErrors({ email: 'Invalid credentials' });
+        } else {
+          console.error('Login error:', error);
+          setLoginErrors({ email: 'Invalid credentials' });
+        }
+        
       }
     }
   };
