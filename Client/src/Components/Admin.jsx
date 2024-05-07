@@ -14,7 +14,6 @@ export default function Admin() {
         if (e !== "forexeaglestraders@gmail.com") {
             navigate('/');
         } else {
-            
             fetchAttendanceData();
         }
     }, []);
