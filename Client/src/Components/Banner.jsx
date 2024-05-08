@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import whatsappQR from "../assets/whatsappQR.jpg";
+import whatsappQR from "../assets/whatsappQR.jpeg";
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 export default function Banner() {
