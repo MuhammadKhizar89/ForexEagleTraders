@@ -30,6 +30,12 @@ export default function Work() {
     if (!token) {
       navigate('/'); // Redirect to the home page if auth-token is empty
     }
+    
+    const em=localStorage.getItem('admin_email');
+        if (em === "forexeaglestraders@gmail.com") {
+          navigate('/admin'); // Use navigate to redirect
+        window.location.reload();
+        }
 
     const fetchAttendanceData = async () => {
       try {
