@@ -18,7 +18,7 @@ export default function Banner() {
       <div className="container max-w-md mx-auto px-4 py-8 bg-[#00A884] shadow-lg rounded-lg">
         <img src={whatsappQR} alt="WhatsApp QR Code" className="mx-auto mb-6" />
         <div className="flex justify-center">
-          <a href="https://chat.whatsapp.com/IE0NxOxpQwnIJKYLIyGYrF" target="_blank" rel="noopener noreferrer">
+          <a href="https://chat.whatsapp.com/Ejf74lRaPILJ5oCYlFVZWI" target="_blank" rel="noopener noreferrer">
             <button className="bg-white rounded-2xl hover:bg-green-300 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
               Join Group
             </button>
