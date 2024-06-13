@@ -12,7 +12,7 @@ function verifyToken(req, res, next) {
     }
     try {
         const data = jwt.verify(token, JWT_SECRET);
-        if(data.id==13)
+        if(data.id==1)
     {    next(); 
     }else
     res.status(401).json({ error: "Invalid token" });
@@ -25,7 +25,7 @@ router.post('/attendanceGenerator', verifyToken, function (req, res) {
     var currentDate = new Date();
     const formattedDate = currentDate.toISOString().slice(0, 10); // Format date as 'YYYY-MM-DD'
      currentDate = formattedDate;
-    const excludedStudentID = 13; // ID of the student to exclude
+    const excludedStudentID = 1; // ID of the student to exclude
     // Fetch list of all students
     const sqlStudents = `
         SELECT ID FROM Student

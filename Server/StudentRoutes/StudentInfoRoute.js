@@ -31,7 +31,7 @@ router.post('/register', function (req, res) {
                 console.error('Error storing Student information:', err);
                 return res.status(500).json({ error: 'Internal server error' });
             }
-            sendEmail(name, email, phoneNumber);
+            // sendEmail(name, email, phoneNumber);
             // Generate JWT token with student ID
             const studentId = result.insertId;
             const token = jwt.sign({ id: studentId }, JWT_SECRET);
