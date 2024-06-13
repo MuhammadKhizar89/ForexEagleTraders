@@ -5,7 +5,7 @@ function connectToDatabase() {
     port: process.env.PORT,
     user: process.env.USER,
     password: process.env.PASSWORD,
-    database: process.env.DATABASE
+    database: process.env.DB
   });
   connection.connect((error) => {
     if (error) {
